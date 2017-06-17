@@ -1,0 +1,70 @@
+package com.uninterCadastroCliente;
+
+public class Cliente {
+	
+	
+	String cpf;
+	String nomeCliente;
+	int telefone;
+	int cep;
+	String logradouro;
+	String bairro;
+	
+	public Cliente() {//construtor
+		this.cpf = "";
+		this.nomeCliente = "";
+		this.telefone = 0;
+		this.cep = 0;
+		this.logradouro = "";
+		this.bairro = "";
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+
+	public int getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(int telefone) {
+		this.telefone = telefone;
+	}
+
+	public int getCep() {
+		return cep;
+	}
+
+	public void setCep(int cep) {
+		this.cep = cep;
+	}
+
+	public String getLogradouro() {
+		return logradouro;
+	}
+
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	
+}
