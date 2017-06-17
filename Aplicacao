@@ -1,0 +1,62 @@
+package com.uninterCadastroCliente;
+
+import java.util.Scanner;
+
+public class Aplicacao {
+
+	public static void main(String[] args) {
+	//Criando o Menu
+		public void listaMetodos(){//onde instancio essa variavel
+			System.out.println("Escolha uma opção\n" + "1 => Novo Cliente | 2 => Alterar Cliente | 3 => Listar Cliente" + "4 => Excluir Produto | 5 => Sair");
+		}
+		
+	//Metodo que sera executado. Sera escolhido pela opção passada pelo teclado.
+		switch (opcao){
+			case 1:
+				System.out.println("Chamou o método addClientes");
+				break;
+			case 2:
+				System.out.println("Chamou o método removerClientes");
+				break;
+			case 3:
+				System.out.println("Chamou o método atualizarClientes");
+				break;
+			case 4:
+				System.out.println("Chamou o método ");
+				break;
+			case 5:
+				System.out.println("Encerrado");
+				System.exit(0);
+				
+			default:
+				System.out.println("Opção inválida");
+				break;
+		}
+		
+	
+	Aplicacao aplicacao = new Aplicacao();
+	Scanner scanner = new Scanner(System.in);
+	int opcao;
+	
+	While (1 > 0) {
+		aplicacao.listaMetodos();
+		opcao = scanner.nextInt();
+		aplicacao.executeMetodo(opcao);
+	}
+	
+		
+		/*ClientesCrud operacoes = new ClientesCrud();
+		operacoes.addClientes("111", "Joao", 100001, 111,"vere","uyyty");
+		operacoes.addClientes("456", "Francisco", 200000002, 333333, "Sabia", "Passaro");
+		operacoes.addClientes("789", "Maria", 300000003, 444444, "XV", "centro");
+		operacoes.addClientes("001", "Benedita", 400000004, 555555, "X", "Y");
+		
+		//operacoes.removerClientes(2);
+		//operacoes.atualizarClientes(2, cpf, nomeCliente, telefone, cep, logradouro, bairro);
+		//operacoes.listarClientes();
+		
+		operacoes.listarClientes();	
+	*/	
+	}
+
+}
