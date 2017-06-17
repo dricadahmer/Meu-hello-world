@@ -1,0 +1,83 @@
+package com.uninterCadastroCliente;
+
+
+public class ClientesCrud {
+	
+	Cliente[] clientes;//clientes é o nome do nosso array. Onde cliente é a classe e clientes e o nome do nosso array - colocamos a classe sem "s" e o array com o "s"
+	int i = 0; // é um contadorW - perguntar pro Leandro.
+	
+	public ClientesCrud(){
+		this.clientes = new Cliente[999]; //declarando o array list, instanciando o clientes da classe clientes
+	}
+//             INCLUIR CLIENTES	(CREATE)
+	public void addClientes(String cpf, String nomeCliente, int telefone, int cep, String logradouro, String bairro){
+		this.clientes[this.i] = new Cliente();
+		this.clientes[this.i].setCpf(cpf);//metodo que add clientes da classe cliente
+		this.clientes[this.i].setNomeCliente(nomeCliente);
+		this.clientes[this.i].setTelefone(telefone);
+		this.clientes[this.i].setCep(cep);
+		this.clientes[this.i].setLogradouro(logradouro);
+		this.clientes[this.i].setBairro(bairro);
+		
+		this.i++;//me diz o tamanho do vetor - i+1	
+	}	
+	
+//              REMOVER CLIENTES (DELETE)
+	public String removerClientes(int posicao){
+		String msg = "";
+		if(posicao <= this.i){
+			for(int j = posicao;j<=this.i;j++){//o J percorre o vetor e tem <= para percorrer todas as posições - e um contador para remover posição. o for percorre usando o contador j
+				this.clientes[j].setCpf(this.clientes[j+1].getCpf());
+				this.clientes[j].setNomeCliente(this.clientes[j+1].getNomeCliente());
+				this.clientes[j].setTelefone(this.clientes[j+1].getTelefone());
+				this.clientes[j].setCep(this.clientes[j+1].getCep());
+				this.clientes[j].setLogradouro(this.clientes[j+1].getLogradouro());
+				this.clientes[j].setBairro(this.clientes[j+1].getBairro());
+				}
+			this.i--;//para excluir a posição e nao deixar espaços vazios no meio da lista
+		}
+			
+		else{
+			msg = "Nâo existe registro nessa posicao";
+			
+		}
+		return msg;
+	}
+		
+//                ATUALIZAR CLIENTE (UPDATE)
+	public String atualizarClientes(int posicao, String cpf, String nomeCliente, int telefone, int cep, String logradouro, String bairro){
+		String msg = "";
+		if (posicao <= this.i){//se a posiçao localizada
+			
+				this.clientes[posicao].setCpf(cpf);
+				this.clientes[posicao].setNomeCliente(nomeCliente);
+				this.clientes[posicao].setTelefone(telefone);
+				this.clientes[posicao].setCep(cep);
+				this.clientes[posicao].setLogradouro(logradouro);
+				this.clientes[posicao].setBairro(bairro);
+			
+			msg = "Atualizado com sucesso";
+		}
+		
+		else{
+			msg = "Não existe registro nessa posição";
+		}
+						
+		return msg;
+		
+	}
+
+//                LISTAR (READ)    
+	public void listarClientes(){
+	
+		String msg = "";
+		for(int j = 0; j<this.i; j++){
+			
+			msg = j + " " + this.clientes[j].getCpf() + " " + this.clientes[j].getNomeCliente() + " " + this.clientes[j].getTelefone() + " " + this.clientes[j].getCep() + " " + this.clientes[j].getLogradouro() + " " + this.clientes[j].getBairro();
+			System.out.println(msg);		
+			
+		}
+		
+	}	
+		
+}
